@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300;600;700&display=swap');
+
+:root{
+    --font-libre-franklin: 'Libre Franklin', sans-serif;
+    --font-weight-light:300;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+
+    --primary-blue:hsl(223, 87%, 63%);
+
+    --secondary-pale-blue: hsl(223, 100%, 88%);
+    --secondary-light-red: hsl(354, 100%, 66%);
+
+    --neutral-gray:hsl(0, 0%, 59%);
+    --neutral-very-dark-blue: hsl(209, 33%, 12%);
+
+    --main-font-size: 20px;
+    --mobile-font-size:16px;
+}
+
+*, *::after, *::before{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+html{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height:100vh;
+    max-width:100vw;
+    flex-direction: column;
+}
+
+body{
+    font-size:var(--mobile-font-size);
+    font-family: var(--font-libre-franklin);
+    color:var(--neutral-very-dark-blue);
+}
+@media(max-width:819px){
+    body{
+        max-width:375px;
+    }
+
+    main .form-container .submit-button{
+        margin:1rem 0 0 0;
+        font-size:100%;
+    }
+    .illustration-image{
+        width:390px;
+        margin: 5rem 0 9rem 0;
+    }
+    footer .footer-description{
+        margin-top:3rem;
+        font-size:12px;
+    }
+    footer ul li a i.fa-facebook{
+        padding:0.5rem 0.7rem;
+    }
+}
+
+main{
+    text-align: center;
+}
+
+main .logo{
+    padding:5rem 0 3rem 0;
+}
+
+main h1 .light{
+    font-weight: var(--font-weight-light);
+    color:var(--neutral-gray);
+}
+
+main h1 .bold{
+    font-weight: var(--font-weight-bold);
+    color:var(--neutral-very-dark-blue);
+}
+main p.description{
+    font-weight: var(--font-weight-light);
+    margin:1rem 0 2.5rem 0;
+}
+
+main .form-container .email-input{
+    padding:1rem 25% 1rem 2rem;
+    font-size:100%;
+    width:90%;
+    border: 1px solid var(--secondary-pale-blue);
+    border-radius:2rem;
+    outline:none;
+    transition: border-color 0.25s ease-out;
+}
+main .form-container .email-input:focus{
+    border-color:var(--primary-blue);
+}
+main .form-container .email-input::placeholder{
+    color:var(--secondary-pale-blue);
+}
+main .form-container .submit-button{
+    padding:1rem 3rem;
+    background-color: var(--primary-blue);
+    color:white;
+    font-weight: var(--font-weight-semibold);
+    border-radius: 2rem;
+    border:none;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 3px 15px;
+    cursor:pointer;
+    width:90%;
+}
+
+main .email-error{
+    color:var(--secondary-light-red);
+    font-size:12px;
+    font-style: italic;
+    margin-top:0.5rem;
+    margin-bottom:0.5rem;
+}
+
+footer{
+    text-align: center;
+}
+footer ul{
+    display: flex;
+    justify-content: center;
+    gap:1rem;
+}
+footer ul li{
+    list-style:none;
+}
+footer ul li a{
+    color:var(--primary-blue);
+    font-size: var(--main-font-size);
+}
+footer ul li a i{
+    display: inline-block;
+    border:1px solid var(--secondary-pale-blue);
+    padding:0.4rem 0.5rem;
+    border-radius:50%;
+    transition: 0.2s ease-in-out;
+}
+
+footer .footer-description{
+    color:var(--neutral-gray);
+    margin-bottom:3rem;
+}
+
+@media (min-width:820px){
+    body{
+        font-size:var(--main-font-size);
+        max-width:800px;
+    } 
+    main h1 .light{
+        letter-spacing: 3px;
+    }
+
+    main .form-container .email-input{
+        margin-right:0.5rem;
+        width:fit-content;
+        font-size:var(--mobile-font-size);
+    }
+    main .email-error{
+        left:calc((100% - 540px)/ 2);
+        position:absolute;
+    }
+    main .form-container .submit-button{
+        font-size:var(--mobile-font-size);
+        width:fit-content;
+        margin:0 0 0 0.5rem;
+        transition: opacity 0.25s ease-out;
+    }
+    main .form-container .submit-button:hover{
+        opacity:0.85;
+    }
+    .illustration-image{
+        width:75%;
+        margin: 5rem 0 3rem 0;
+    }
+
+    footer ul li a i:hover{
+        color:white;
+        background-color: var(--primary-blue);
+    }
+    footer .footer-description{
+        margin-top:1.5rem;
+        font-size:14px;
+    }
+    footer ul li a i.fa-facebook{
+        padding:0.4rem 0.6rem;
+    }
+    footer ul li a{
+        font-size:var(--mobile-font-size);
+    }
+}
